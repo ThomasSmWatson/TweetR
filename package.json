@@ -1,0 +1,22 @@
+{
+  "name": "tweetr",
+  "version": "1.0.0",
+  "description": "Origional idea where you can send 'tweets' to a puclic page amongst friends",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ThomasSmWatson/TweetR.git"
+  },
+  "author": "Thomas Watson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasSmWatson/TweetR/issues"
+  },
+  "homepage": "https://github.com/ThomasSmWatson/TweetR#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
