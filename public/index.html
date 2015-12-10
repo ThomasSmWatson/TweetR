@@ -6,24 +6,38 @@
 		<!-- Latest compiled and minified Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/site.css">
+		<!--AngularJs CDN-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/site.css">
+		<script src="controllers/mainCtrl.js"></script>
 		<title>Tweet R</title>
 	</head>
 	<body style="padding-top:50px">
-		<div class="main">
+		<div class="main" ng-app="mainApp">
 			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+					</div>
+				</div>
 			</nav>
 			<div class="col-md-3 side-bar">
-
 			</div>
-			<div class="col-md-6 news-feed">
-				<h1 align='center'>Welcome to Tweet R!</h1>
+			<div class="col-md-6 news-feed" ng-controller="mainController" >
+				<h1 align='center'>Welcome to Tweet R !</h1>
+				<div class='tweetr-post-container' ng-repeat='post in posts'>
+					<div class='tweetr-post'>
+						<h3>{{post.title}}</h3>
+						<p>{{post.text}}</p>
+						<a class='tweetr-post-author'href='#/author'>{{post.author}}</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-3 side-bar">
 				
 			</div>
 		</div>
 		
-
 	</body>
 </html>
+	
