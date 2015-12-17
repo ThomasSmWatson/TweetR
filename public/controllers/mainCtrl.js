@@ -1,17 +1,18 @@
-var app = angular.module('mainApp',[]);
+var app = angular.module('mainApp',['ngRoute']);
 
-app.controller('mainController',['$scope',function($scope){
-	$scope.posts = [{
-		author: 'Tom',
-		title:'MaTitle',
-		text:'BLABABABABABA'
-	},{
-		author: 'Tim',
-		title:'PostNo2',
-		text:'Lots of god dam text!'
-	},{
-		author: 'Sally',
-		title:'Oh god i\'m so ugly!',
-		text:'#ClassicLass'
-	}];
+
+app.controller('mainController',['$scope','$http',function($scope,$http){
+	
+
+	$http.get('/posts/global')
+	.then(function(res){$scope.posts = res.data;});
+	$scope.submitData = function(data){
+		var post = $http.post('/posts/global',data);
+		post.success(function(data,status,headers,config){
+			console.log(data);
+			console.log(status);
+			$http.get('/posts/global')
+			.then(function(res){$scope.posts = res.data;});
+		});
+	}
 }]);

@@ -1,13 +1,16 @@
 <!DOCTYPE>
 <html>
 	<head>
+		<!-- JQuery CDN -->
+		<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
 		<!-- Latest compiled and minified Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!-- Latest compiled and minified Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
 		<!--AngularJs CDN-->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="/css/site.css">
 		<script src="controllers/mainCtrl.js"></script>
 		<title>Tweet R</title>
@@ -25,6 +28,16 @@
 			</div>
 			<div class="col-md-6 news-feed" ng-controller="mainController" >
 				<h1 align='center'>Welcome to Tweet R !</h1>
+				<hr>		
+				<div class='tweetr-post-form-container'>
+					<h2 align='center'>Submit a post</h2>
+					<label for='title-input'>Title:</label>
+					<input type='text' class='form-control' ng-model='post.title' id='title-input' placeholder='Title'>
+					<label for='post-input'>Post:</label>
+					<input type='text' class='form-control' id='post-input' ng-model='post.text' id='post-input' placeholder='Enter your post here'>	
+					<br>
+					<button type='button' class='btn btn-primary' ng-click='submitData(post)'>Post</button>
+				</div>
 				<div class='tweetr-post-container' ng-repeat='post in posts'>
 					<div class='tweetr-post'>
 						<h3>{{post.title}}</h3>

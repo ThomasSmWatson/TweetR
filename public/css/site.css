@@ -85,3 +85,20 @@
     text-align: left;
     color: #555555;
 }
+
+
+.tweetr-post-form-container{
+    border: 1px solid #dddddd;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    padding:20px;
+}
+.tweetr-post-form-container>h2{
+    font-family: monospace;
+}
+.tweetr-post-form-container> #post-input{
+   font-size:14px;
+   height:200px; 
+}
