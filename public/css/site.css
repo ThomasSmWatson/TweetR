@@ -1,13 +1,12 @@
 .news-feed{
-	background:#ffffff;
-	height: 100vh;
+    background:#ffffff;
 	position:relative;
+    min-height: 100vh;
 	box-shadow:0px 0px 60px 5px #ffcccc ;
 	z-index: 100;
 }
 .side-bar{
 	background: #ffe5e5;
-	height: 100vh;
 }
 .navbar-default{
 		background-color: #e60000;
