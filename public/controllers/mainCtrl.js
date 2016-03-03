@@ -1,4 +1,4 @@
-var app = angular.module('mainApp',['ngRoute']);
+var app = angular.module('mainApp',['ngRoute','ngAnimate']);
 
 
 app.controller('mainController',['$scope','$http',function($scope,$http){
